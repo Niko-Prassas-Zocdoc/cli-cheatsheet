@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CLI Cheatsheet</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    pre { background: #f4f4f4; padding: 1rem; border-radius: 8px; }
+    button.copy-btn { margin-top: 0.5rem; }
+  </style>
+</head>
+<body>
+  <h1>Useful CLI Commands</h1>
+
+  <div>
+    <pre id="cmd1">ls -la</pre>
+    <button class="copy-btn" onclick="copyToClipboard('cmd1')">Copy</button>
+  </div>
+
+  <div>
+    <pre id="cmd2">git log --oneline</pre>
+    <button class="copy-btn" onclick="copyToClipboard('cmd2')">Copy</button>
+  </div>
+
+  <script>
+    function copyToClipboard(elementId) {
+      const text = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Copied!");
+      });
+    }
+  </script>
+</body>
+</html>
